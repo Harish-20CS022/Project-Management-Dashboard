@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./index.css">
+    <!-- Tailwind CSS-->
+     <link href="./src/output.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar Section -->
+     <nav class="navbar">
+        <div class="nav_left gap-1">
+            <button id="menuBtn">☰</button>
+            <h1 class="font-bold">Dashboard</h1>
+        </div>
+        <div>
+            <h1 class="font-bold text-5xl">Project Management Task</h1>
+        </div>
+        <div class="nav_right gap-2" >
+            <i class="fa-solid fa-magnifying-glass" style="color: rgb(251, 251, 251);"></i>
+            <input class=" search_box border border-black-200" type="text" placeholder="Search Projects,tasks...">
+        </div>
+    </nav>
+
+    <!-- SideBar Section -->
+    <div id="sidebar" class="sidebar">
+        <div class="text-right p-5 pr-5">
+            <p id="closenav" class="inline cursor-pointer">X</p>
+        </div>
+        <ul>
+            <li>Dashboard</li>
+            <li>Projects</li>
+            <li>Tasks</li>
+            <li>Timeline</li>
+            <li>Reports</li>
+            <li>Settings</li>
+        </ul>
+    </div>
+
+    <!-- Overview Section -->
+     <section class="overview">
+        <div class="card">
+            <div class="card-top">
+                <span class="icon-blue"></span>
+                <span class="tag"> 4 new</span>
+            </div>
+
+            <h4>Total Projects</h4>
+            <h2 id="totalProjects">0</h2>
+            <p>4 added this month</p>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <span class="icon green">✔</span>
+                <span class="tag green-tag">2 on track</span>
+            </div>
+
+            <h4>Ongoing Projects</h4>
+            <h2 id="ongoingProjects">0</h2>
+            <p>2 delayed</p>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <span class="icon orange">📅</span>
+                <span class="tag red-tag">3 overdue</span>
+            </div>
+
+            <h4>Tasks Due Today</h4>
+            <h2 id="tasksToday">0</h2>
+            <p>1 completed</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section>
+        <section class="dashboard-content">
+            <div class="projects">
+                <div class="section-header">
+                <h3>Projects</h3>
+                <a href="#">View all →</a>
+                </div>
+
+
+            <div class="add-project">
+                <input type="text" id="projectName" placeholder="Project name">
+
+                <select id="projectStatus">
+                    <option value="On Track">On Track</option>
+                    <option value="Delayed">Delayed</option>
+                    <option value="Completed">Completed</option>
+                </select>
+
+                <input type="date" id="projectDeadline">
+
+                <button onclick="addProject()">Add Project</button>
+            </div>
+            <table>
+                <tr>
+                    <th>Project</th>
+                    <th>Status</th>
+                    <th>Progress</th>
+                    <th>Deadline</th>
+                    <th>Action</th>
+                </tr>
+
+                <tbody id="projectTable">
+
+                <tr>
+                    <td>Website Redesign</td>
+                    <td class="status green">On Track</td>
+                        <td>
+                            <div class="progress">
+                                <div class="bar" style="width:72%"></div>
+                            </div>
+                        </td>
+                    <td>Apr 12</td>
+                    <td>
+                        <button onclick="deleteProject(this)" class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Mobile App v2</td>
+                    <td class="status red">Delayed</td>
+                        <td>
+                            <div class="progress">
+                                <div class="bar red-bar" style="width:38%"></div>
+                            </div>
+                        </td>
+                    <td>Mar 28</td>
+                    <td>
+                        <button onclick="deleteProject(this)" class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Data Pipeline</td>
+                    <td class="status green">On Track</td>
+                        <td>
+                        <div class="progress">
+                            <div class="bar" style="width:55%"></div>
+                        </div>
+                    </td>
+                    <td>May 5</td>
+                    <td>
+                        <button onclick="deleteProject(this)" class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+                </tbody>
+        </table>
+    </div>
+
+
+    <!-- Tasks Section -->
+    <div class="tasks">
+
+        <div class="section-header">
+            <h3>Tasks Due Today</h3>
+            <a href="#">View all →</a>
+        </div>
+
+        <ul id="taskList">
+
+            <li class="task-item">
+                <input type="checkbox">
+                <span class="task-name">Review design mockups</span>
+                <span class="priority high">High</span>
+                <span class="due-date">Today</span>
+            </li>
+
+            <li class="task-item">
+                <input type="checkbox">
+                <span class="task-name">Fix login bug</span>
+                <span class="priority high">High</span>
+                <span class="due-date">Today</span>
+            </li>
+
+            <li class="task-item">
+                <input type="checkbox">
+                <span class="task-name">Write sprint notes</span>
+                <span class="priority medium">Medium</span>
+                <span class="due-date">Mar 18</span>
+            </li>
+
+            <li class="task-item">
+                <input type="checkbox">
+                <span class="task-name">Update project timeline</span>
+                <span class="priority medium">Medium</span>
+                <span class="due-date">Mar 21</span>
+            </li>
+        </ul>
+    </div>
+    </section>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>

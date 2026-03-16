@@ -1,0 +1,322 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+    background: white;
+    border-bottom: 1 solid #eee;
+}
+
+.nav_left{
+    display: flex;
+}
+
+.nav-left h1{
+    font-size:22px;
+    margin-bottom:3px;
+}
+
+.nav_right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.search_box{
+    display:flex;
+    align-items:center;
+    background:#f5f5f5;
+    padding:8px 12px;
+    border-radius:10px;
+}
+
+.search_box input{
+    border:none;
+    outline:none;
+    background:transparent;
+    margin-left:6px;
+    width:180px;
+}
+
+
+/* Sidebar Section */
+    .sidebar{
+    position:fixed;
+    top:0;
+    left:-250px;
+    width:250px;
+    height:100%;
+    background:white;
+    box-shadow:2px 0 10px rgba(0,0,0,0.1);
+    padding-top:80px;
+    transition:0.3s;
+    z-index:1000;
+}
+
+.sidebar p{
+    text-align: right;
+    padding-right: 30px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    padding:15px 25px;
+    cursor:pointer;
+    border-bottom:1px solid #eee;
+}
+
+.sidebar li:hover{
+    background:#f8fafc;
+}
+
+.sidebar.active{
+    left:0;
+}
+
+/* Overview Section */
+.overview{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    transition:0.2s;
+}
+
+.card h4{
+    color:#666;
+    font-size:14px;
+    margin-top:10px;
+}
+
+.card h2{
+    font-size:28px;
+    margin:5px 0;
+}
+
+.card p{
+    font-size:13px;
+    color:#888;
+}
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.icon{
+    padding:10px;
+    border-radius:10px;
+    font-size:18px;
+}
+
+.tag{
+    background:#e7f0ff;
+    padding:4px 8px;
+    border-radius:8px;
+    font-size:12px;
+}
+
+/* Dashboard section */
+
+.dashboard-content{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+    padding:30px;
+}
+
+/* SECTION HEADER */
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.section-header a{
+    text-decoration:none;
+    color:#3b82f6;
+    font-size:14px;
+}
+
+/* PROJECT TABLE */
+
+.projects{
+    background:white;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+.add-project{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.add-project input,
+.add-project select{
+    padding:8px;
+    border:1px solid #ddd;
+    border-radius:6px;
+}
+
+.add-project button{
+    background:#3b82f6;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.delete-btn{
+    background:#dc2626;
+    color:white;
+    border:none;
+    padding:6px 10px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.delete-btn:hover{
+    background:#b91c1c;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:12px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+    font-size:14px;
+}
+
+tr:hover{
+    background:#f9fafb;
+}
+
+/* STATUS */
+
+.status.green{
+    color:#16a34a;
+}
+
+.status.red{
+    color:#dc2626;
+}
+
+/* PROGRESS BAR */
+
+.progress{
+    background:#eee;
+    height:8px;
+    border-radius:5px;
+}
+
+.bar{
+    background:#16a34a;
+    height:8px;
+    border-radius:5px;
+}
+
+.red-bar{
+    background:#dc2626;
+}
+
+/* TASK SECTION */
+
+.tasks{
+    background:white;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+.task-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:8px 0;
+}
+
+.avatar{
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    margin-right:5px;
+}
+
+.assignee{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.due-date{
+    color:#666;
+    font-size:14px;
+}
+
+.tasks ul{
+    list-style:none;
+}
+
+.tasks li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+    font-size:14px;
+}
+
+/* PRIORITY */
+
+.priority{
+    margin-left:auto;
+    padding:3px 8px;
+    border-radius:6px;
+    font-size:12px;
+}
+
+.high{
+    background:#ffe5e5;
+    color:#dc2626;
+}
+
+.medium{
+    background:#fff2d6;
+    color:#ca8a04;
+}
